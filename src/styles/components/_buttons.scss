@@ -1,0 +1,73 @@
+%button{
+    display: inline-block;
+    // padding-top: 12px;
+    // padding-bottom: 12px;
+    // padding-left: 10px;
+    // padding-right: 10px;
+    padding: 10px 11px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+    text-align: center; 
+    font-size: $text-base;
+    transition:color 0.14s ease-in-out,background-color 0.14s ease-in-out;
+}
+.btn:disabled{
+    pointer-events: none;
+    opacity: 0.6;transition:none !important;
+    &:hover{
+        cursor: no-drop;
+    }
+}
+.btn{
+    @extend %button
+}
+.btn-sm{
+    font-size: $text-sm;
+    padding: 8px 8px;
+}
+.btn-lg{
+    font-size: $text-lg;
+    padding: 12px 12px;
+}
+.btn-primary{
+    background-color: $primary;
+    color: $white;
+    &:hover{
+        background-color:darken($color: $primary, $amount: 6.5);
+        color: $white;
+    }
+}
+.btn-success{
+    background-color: $success;
+    color: $white;
+    &:hover{
+        background-color:darken($color: $success, $amount: 6.5);
+        color: $white;
+    }
+}
+.btn-danger{
+    background-color: $danger;
+    color: $white;
+    &:hover{
+        background-color:darken($color: $danger, $amount: 6.5);
+        color: $white;
+    }
+}
+.btn-warning{
+    background-color: $warning;
+    color: $white;
+    &:hover{
+        background-color:darken($color: $warning, $amount: 6.8);
+        color: $white;
+    }
+}
+
+@each $key,$value in $colors {
+    .btn-outline-#{$key}{ 
+        border:1px solid $value; color:$value;background-color: $white;
+        &:hover{
+            border:1px solid $value; color:$white;background-color: $value;
+        }
+    }
+}

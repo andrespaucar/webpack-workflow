@@ -1,0 +1,91 @@
+%aftertool{
+    content: "";
+    position: absolute;
+    border-style: solid; 
+}
+/*
+<div class="tooltip">
+            <span class="tooltip-text tooltip-botton">lofinpe</span>
+            <button class="btn btn-success">Enviar </button>
+        </div>
+*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden; 
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1; 
+    font-size: $text-sm;
+    transition: background-color .45s ease-in-out;
+    opacity:0;
+    transition: opacity .45s ease-in-out;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+ }
+.tooltip-right {
+    top: 20%;
+    left: 100%;
+    margin-left: 5px;
+    &::after{
+        @extend %aftertool;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-color: transparent #555 transparent transparent;
+    }
+}
+
+.tooltip-top{
+    bottom: 100%;
+    left: 50%; 
+    margin-bottom: 5px;
+    transform: translateX(-50%);
+    &::after{
+        @extend %aftertool;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px; 
+        border-color: #555 transparent transparent transparent;
+    }
+}
+.tooltip-botton{
+    top: 100%;
+    left: 50%; 
+    transform: translateX(-50%);
+    margin-top: 5px;
+    &::after{
+        @extend %aftertool;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-color: transparent transparent #555   transparent;
+    }
+}
+.tooltip-left{
+    top: 50%;
+    right: 100%; 
+    transform: translateY(-50%);
+    margin-right: 5px;
+    &::after{
+        @extend %aftertool;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-color: transparent transparent transparent #555;
+    }
+}

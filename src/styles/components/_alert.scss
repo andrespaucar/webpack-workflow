@@ -1,0 +1,12 @@
+.alert{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+} 
+// ALERT COLORS
+@each $key,$value in $colors {
+    .alert-#{$key}{
+        background-color: lighten($color: $value, $amount: 30);
+        color:darken($color: $value, $amount: 20);
+    }
+}

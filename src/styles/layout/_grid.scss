@@ -1,0 +1,48 @@
+.grid{
+    display: grid;
+}
+.grid-flow-col{grid-auto-flow: column;}
+.grid-flow-row{grid-auto-flow: row;}
+
+@for $c from 1 through 12 {
+    .grid-cols-#{$c}{
+        grid-template-columns: repeat($c,minmax(0,1fr));
+    }
+}
+@for $i from 1 through 5 {
+    .gap-#{$i}{
+        gap:#{$i/4}rem;
+    }
+}
+//  SM
+@media (max-width:map-get($map: $sm, $key: 'max')){
+    @for $c from 1 through 12 {
+        .sm\:grid-cols-#{$c}{
+            grid-template-columns: repeat($c,minmax(0,1fr));
+        }
+    }
+}
+// MD
+@media (min-width:map-get($map: $md, $key: 'min')) and ( max-width:map-get($map: $md, $key: 'max')){
+    @for $c from 1 through 12 {
+        .md\:grid-cols-#{$c}{
+            grid-template-columns: repeat($c,minmax(0,1fr));
+        }
+    }
+}
+// LG
+@media (min-width:map-get($map: $lg, $key: 'min')) and ( max-width:map-get($map: $lg, $key: 'max')){
+    @for $c from 1 through 12 {
+        .lg\:grid-cols-#{$c}{
+            grid-template-columns: repeat($c,minmax(0,1fr));
+        }
+    }
+}
+// XL
+@media (min-width:map-get($map: $xl, $key: 'min')){
+    @for $c from 1 through 12 {
+        .xl\:grid-cols-#{$c}{
+            grid-template-columns: repeat($c,minmax(0,1fr));
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.form-group{
+    display: flex; flex-direction: column;
+    label{
+        color:#4a5568;
+        margin-bottom: 8px;
+        font-size: 0.92rem;
+        font-weight: 700;
+    }
+}
+.form-control{
+    padding: 10px 12px;
+    background-color: #EDF2F7;
+    border:1px solid #EDF2F7;
+    color:#4a5568;
+    border-radius: 4px; appearance: none;
+    font-size: $text-base;
+}
+.form-control:focus{
+    border:1px solid #a0aec0;
+    background-color: $white;
+}

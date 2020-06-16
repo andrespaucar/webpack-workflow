@@ -1,0 +1,52 @@
+.flex{
+    display: flex;
+}
+.flex-wrap{flex-wrap: wrap;}
+.flex-none{display: none;}
+.flex-row{flex-direction: row;}
+.flex-col{flex-direction: column;}
+.flex-col-reverse{flex-direction: column-reverse;}
+.flex-row-reverse{flex-direction: row-reverse;}
+.flex-grow-0{flex-grow: 0;}
+.flex-grow{flex-grow: 1;}
+.flex-grow-2{flex-grow: 2;}
+.flex-grow-3{flex-grow: 3;}
+.flex-grow-4{flex-grow: 4;}
+
+.x-c{justify-content: center;}
+.x-sb{justify-content: space-between;}
+.y-c{align-items: center;}
+.xy-c{justify-content: center; align-items: center;}
+.x-r{justify-content: right;}
+.x-l{justify-content: left;}
+.x-s{justify-items: stretch;}
+.x-sb{justify-content: space-between;}
+.x-sa{justify-content: space-around;}
+.x-se{justify-content: space-evenly;}
+.y-b{align-items: baseline;}
+.y-s{align-items: stretch;}
+
+.w-full{
+    width: 100%;
+}
+
+// @for $i from 1 through 12 {
+//     .w-#{$i}{
+//         width: #{percentage(1/$i)};
+//     }
+//     .w-#{$i}{
+//         width: #{percentage(1/$i)};
+//     }
+// }
+$total-columns: 12; 
+$col-widths: ();
+@for $i from 1 through $total-columns {
+    @for $j from 1 through $i {
+        $w: ($j/$i);
+        @if $j != $i{
+            .w-#{$j}-#{$i} {
+                width: $w * 100%;
+            }
+        }
+    }
+}
