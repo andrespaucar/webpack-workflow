@@ -1,5 +1,5 @@
 <link href="https://raw.githubusercontent.com/YoelPaucar/webpack-workflow/master/dist/css/main.ca314abe86a9a3415ac5.css" rel="stylesheet">
-(setq markdown-css-paths '("https://raw.githubusercontent.com/YoelPaucar/webpack-workflow/master/dist/css/main.ca314abe86a9a3415ac5.css"))
+
 <style>
     body{background:transparent !important}
 </style>
