@@ -1,8 +1,3 @@
-<link href="https://raw.githubusercontent.com/YoelPaucar/webpack-workflow/master/dist/css/main.ca314abe86a9a3415ac5.css" rel="stylesheet">
-
-<style>
-    body{background:transparent !important}
-</style>
 
 ## GET STARTED
 
