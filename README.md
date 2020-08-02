@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<link href="https://raw.githubusercontent.com/YoelPaucar/webpack-workflow/master/dist/css/main.ca314abe86a9a3415ac5.css" rel="stylesheet">
-
-
-=======
->>>>>>> 7a28a15e17e2c23916d20a4781dd3baa79a81d63
 
 ## GET STARTED
 
