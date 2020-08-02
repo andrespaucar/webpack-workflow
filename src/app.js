@@ -7,4 +7,4 @@ import './assets/images/webpack.png'
 
 
 /* JAVASCRIPT */
- 
+import './components/modal/modal'

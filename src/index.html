@@ -1,136 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-
-    <hr />
-
-    ### GRID
-
-    <div class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 text-white text-center">
-        <div class="bg-primary p-2">1</div>
-        <div class="bg-success p-2">2</div>
-        <div class="bg-danger p-2">3</div>
-        <div class="bg-secondary p-2">4</div>
-        <div class="bg-success p-2">5</div>
-        <div class="bg-warning p-2">6</div>
-        <div class="bg-dark p-2">7</div>
-        <div class="bg-success p-2">8</div>
-        <div class="bg-danger p-2">9</div>
-        <div class="bg-primary p-2">10</div>
-        <div class="bg-indigo p-2">11</div>
-        <div class="bg-info p-2">12</div>
+    <style>
+        /* body {font-family: Arial, Helvetica, sans-serif;} */
+        
+        /* The Modal (background) */
+        .modal {
+          display: block; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+          position: relative;
+          background-color: #fefefe;
+          margin: auto;
+          padding: 0;
+          border: 1px solid #888;
+          width: 80%;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+          -webkit-animation-name: animatetop;
+          -webkit-animation-duration: 0.4s;
+          animation-name: animatetop;
+          animation-duration: 0.4s
+        }
+        .modal-rc{
+            -webkit-animation-name: animatetop_r;
+          -webkit-animation-duration: 0.45s;
+          animation-name: animatetop_r;
+          animation-duration: 0.45s
+        }
+        
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+          from {top:-300px; opacity:0} 
+          to {top:0; opacity:1}
+        }
+        
+        @keyframes animatetop {
+          from {top:-300px; opacity:0}
+          to {top:0; opacity:1}
+        }
+        /* Add Animation */
+        /* @-webkit-keyframes animatetop_r {
+            from {top:0; opacity:1}
+            to {top:-300px; opacity:0} 
+        } */
+        
+        @keyframes animatetop_r {
+            from {top:0; opacity:1}
+            to {top:-300px; opacity:0}
+        }
+        
+        /* The Close Button */
+        .close {
+          color: white;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        .modal-header {
+          padding: 2px 16px;
+          background-color: #5cb85c;
+          color: white;
+        }
+        
+        .modal-body {padding: 2px 16px;}
+        
+        .modal-footer {
+          padding: 2px 16px;
+          background-color: #5cb85c;
+          color: white;
+        }
+        </style>
+    <div class="">
+        <!-- <button class="modal-open bg-blue-600 px-3 py-2 text-white" data-modal="modal-demo2">open modal2</button>
+        <button class="modal-open bg-blue-600 px-3 py-2 text-white" data-modal="modal-demo">open modal</button> -->
+        <button class="btn btn-primary" data-modal="saludo">Open Modal</button>
+        <button class="btn btn-primary" id="createel"
+            >create</button>
     </div>
-    <hr />
-
-    ### FLEX
-
-    <div class="flex flex-wrap p-4 text-white ">
-        <div class="w-1-3 bg-primary text-center">w-1-3</div>
-        <div class="w-1-3 bg-success text-center">w-1-3</div>
-        <div class="w-1-3 bg-danger text-center">w-1-3</div>
+     
+    <div id="txt">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ipsum sequi unde impedit rem optio quis mollitia doloremque odio cumque, nam vel dolores repellat repudiandae alias delectus expedita vero numquam.
     </div>
-    <div class="flex p-4 text-white">
-        <!-- <div class="w-1-3 bg-primary text-center">w-1-3</div> -->
-        <div class="w-2-3 bg-danger text-center">w-3-2</div>
-        <div class="w-1-3 bg-warning text-center">w-1-3</div>
-
-    </div>
-
-    ### FORM
-    <div class="grid grid-cols-2 gap-4 p-4 rounded shadow-lg m-4 border border-dark bg-white">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="Andres">
+    <!-- {{-- MODAL - RETO CREAR TODO ESTO CON PURO JS https://codepen.io/AlvaroFelipe/pen/QqGKmE?editors=1010 --}} -->
+    <!-- <div class="modal opacity-0 pointer-events-none" id="modal-demo">
+        <div class="fixed w-full h-full top-0 left-0 flex items-center justify-center" >{{-- z-20 --}}
+            <div class="modal-overlay absolute bg-gray-800 opacity-50 w-full h-full" data-modal-close></div>
+        
+            <div class="modal-container bg-white  sm:mx-3 rounded  shadow-lg z-30 overflow-y-auto"> 
+    
+                <div class="modal-content py-4 px-6">
+                    {{-- TITLE --}}
+                    <div class="modal-header flex justify-between items-center pb-3">
+                        <p class="text-lg sm:text-base text-center font-semibold text-gray-800">Completa tus datos para ver el telefóno del anunciante</p>
+                        <div class="modal-close cursor-pointer ml-2" data-modal-close> {{-- z-30 --}}
+                            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    {{-- BODY --}}
+                    <div class="modal-body">
+                        <div class="form-group mb-2">
+                            <label for="email" class="text-gray-700 text-sm">Email</label>
+                            <input class="block appearance-none w-full bg-white hover:border-gray-500 sm:text-sm px-4 py-2 rounded leading-tight border border-gray-400 focus:outline-none focus:border-gray-600" 
+                                type="text" placeholder="Ingrese su Email">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="email" class="text-gray-700 text-sm">Teléfono o Celular</label>
+                            <input class="block appearance-none w-full bg-white hover:border-gray-500 sm:text-sm px-4 py-2 rounded leading-tight border border-gray-400 focus:outline-none focus:border-gray-600" 
+                                type="text" placeholder="Ingrese su Teléfono o Celular">
+                        </div>
+                        <div class="flex justify-center">
+                            <button class="px-4 bg-orange text-white font-medium py-1 rounded-md focus:outline-none">Ver Teléfono</button>
+                        </div>
+    
+                        
+                    </div>
+                    {{-- FOOTER --}}
+                    <div class="modal-footer flex justify-center pt-2">
+                        {{-- <button class="px-3 py-1 bg-transparent rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2" data-modal="modal-demo2" >Aceptar</button>
+                        <button class="px-3 py-1 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400" data-modal-close >Cerrar1</button> --}}
+                        <small class="text-gray-700">Al enviar estás aceptando los <a href="#" class="text-primary">Términos y condiciones de Uso</a></small>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="surname">Surname</label>
-            <input type="text" name="surname" id="surname" class="form-control" placeholder="Paucar">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="text" name="password" id="password" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" name="city" id="city" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" name="state" id="state" class="form-control">
-        </div>
-    </div>
-    <h1>ALERTS</h1>
-    <div class="p-4">
-        <div class="alert alert-primary">Tempplate Alerts</div>
-        <div class="alert alert-danger">Tempplate Alerts</div>
-        <div class="alert alert-warning">Tempplate Alerts</div>
-        <div class="alert alert-success">Tempplate Alerts</div>
-    </div>
-    <h1>BADGE</h1>
-    <div class="p-4">
-        <button class="btn btn-primary">Notifications <span class="badge badge-light">9</span></button>
-        <span class="badge badge-primary">Primary</span>
-        <span class="badge badge-danger">Danger</span>
-        <span class="badge badge-warning">Warning</span>
-        <span class="badge badge-success">Success</span>
-        <span class="badge badge-dark">Dark</span>
-        <span class="badge badge-info">Info</span>
-        <span class="badge badge-light">9</span>
-    </div>
-    <div class="grid grid-cols-2 gap-4 p-4 bg-white rounded shadow-lg m-4 border border-dark">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" placeholder="Andres">
-        </div>
-        <div class="form-group">
-            <label for="surname">Surname</label>
-            <input type="text" name="surname" id="surname" class="form-control" placeholder="Paucar">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="text" name="password" id="password" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" name="city" id="city" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" name="state" id="state" class="form-control">
-        </div>
-    </div>
-    <img src="./assets/images/webpack.png" width="400px" alt="LOGO WEBPACK">
-
-    <div class="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 text-white">
-        <div class="bg-primary p-2 flex x-center">1</div>
-        <div class="bg-success p-2">2</div>
-        <div class="bg-danger p-2">3</div>
-        <div class="bg-secondary p-2">4</div>
-        <div class="bg-success p-2">5</div>
-        <div class="bg-warning p-2">6</div>
-        <div class="bg-dark p-2">7</div>
-        <div class="bg-success p-2">8</div>
-        <div class="bg-danger p-2">9</div>
-        <div class="bg-primary p-2">10</div>
-        <div class="bg-indigo p-2">11</div>
-        <div class="bg-info p-2">12</div>
-    </div>
-
+    </div> -->
 </body>
-
 </html>

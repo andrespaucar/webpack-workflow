@@ -34,7 +34,7 @@
     background-color: $primary;
     color: $white;
     &:hover{
-        background-color:darken($color: $primary, $amount: 6.5);
+        background-color:darken($color: $primary, $amount: 6.3);
         color: $white;
     }
 }
